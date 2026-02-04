@@ -2,14 +2,7 @@
 
 import { connectDB } from '@/lib/mongodb';
 import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
 import { Todo } from '@/models/Todo';
-
-export interface TodoType {
-  _id: string;
-  task: string;
-  completed: boolean;
-}
 
 export async function getTodos() {
   await connectDB();
